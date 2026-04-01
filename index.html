@@ -1,557 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fadzillah Fauzan Aditya | Web Developer</title>
+<meta name="description" content="Portfolio Web Developer Fadzillah Fauzan Aditya. Modern responsive website developer.">
+
+<meta name="keywords" content="web developer, portfolio, website developer indonesia">
+
+<meta name="author" content="Fadzillah Fauzan Aditya">
+
+<title>Fadzillah Fauzan Aditya | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-<style>
+<link rel="stylesheet" href="assets/css/style.css"/>
 
-/* ================= GLOBAL ================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#0b0f14;
-color:#fff;
-overflow-x:hidden;
-}
-
-section{
-padding:100px 10%;
-}
-
-h2{
-font-size:2.5rem;
-text-align:center;
-margin-bottom:60px;
-color:#00e5ff;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo{
-font-weight:700;
-font-size:1.2rem;
-color:#00e5ff;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#fff;
-transition:0.3s;
-}
-
-.nav-links a:hover{
-color:#00e5ff;
-}
-
-.menu-toggle{
-display:none;
-font-size:1.5rem;
-cursor:pointer;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:50px;
-}
-
-.hero-text h1{
-font-size:3rem;
-line-height:1.2;
-}
-
-.hero-text span{
-color:#00e5ff;
-}
-
-.hero-text p{
-margin:20px 0;
-color:#ccc;
-}
-
-.btn{
-display:inline-block;
-padding:12px 28px;
-background:#00e5ff;
-color:#000;
-border-radius:30px;
-font-weight:600;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(0,229,255,0.4);
-}
-
-.hero-img{
-  width:280px;
-  height:280px;
-  border-radius:50%;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(0,229,255,0.4);
-  animation:float 4s ease-in-out infinite;
-  flex-shrink:0;
-}
-
-.hero-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-}
-
-@media(max-width:768px){
-
-.hero{
-  flex-direction:column;
-  text-align:center;
-}
-
-.hero-img{
-  width:220px;
-  height:220px;
-  margin-top:40px;
-}
-
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-}
-
-/* ================= ABOUT ================= */
-
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.stats{
-display:flex;
-gap:40px;
-margin-top:30px;
-}
-
-.stats div{
-text-align:center;
-}
-
-.stats h3{
-font-size:2rem;
-color:#00e5ff;
-}
-
-/* ================= STATS ANIMATION ================= */
-
-.stats div{
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.8s ease;
-}
-
-.stats div.show{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stats h3{
-  transition: 0.3s ease;
-}
-
-.stats div:hover h3{
-  text-shadow: 0 0 20px rgba(0,229,255,0.8);
-}
-
-/* ================= SKILLS ================= */
-
-.skills-category{
-margin-bottom:60px;
-}
-
-.skills-category h3{
-margin-bottom:20px;
-color:#00e5ff;
-}
-
-.skill{
-margin-bottom:20px;
-}
-
-.skill span{
-display:block;
-margin-bottom:5px;
-}
-
-.progress{
-background:#1a1f27;
-height:8px;
-border-radius:10px;
-overflow:hidden;
-}
-
-.progress-bar{
-height:100%;
-width:0;
-background:#00e5ff;
-transition:2s;
-}
-
-/* ================= SERVICES ================= */
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.service-card{
-background:#141a22;
-padding:40px;
-border-radius:15px;
-text-align:center;
-transition:0.3s;
-}
-
-.service-card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(0,229,255,0.3);
-}
-
-.service-card i{
-font-size:2rem;
-margin-bottom:15px;
-color:#00e5ff;
-}
-
-/* ================= PROJECTS ================= */
-
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.project-card{
-background:#141a22;
-border-radius:15px;
-overflow:hidden;
-transition:0.3s;
-}
-
-.project-card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.project-content{
-padding:20px;
-}
-
-.project-card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(0,229,255,0.3);
-}
-
-/* ================= WORKFLOW ================= */
-
-.workflow{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:20px;
-text-align:center;
-}
-
-.workflow div{
-flex:1;
-min-width:150px;
-background:#141a22;
-padding:20px;
-border-radius:10px;
-}
-
-/* ================= WORKFLOW ANIMATION ================= */
-
-.workflow div{
-  position: relative;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-}
-
-/* Active state saat muncul */
-.workflow div.show{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hover effect */
-.workflow div:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,229,255,0.2);
-}
-
-/* Animated underline */
-.workflow div::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:10px;
-  width:0%;
-  height:2px;
-  background:#00e5ff;
-  transition:0.4s ease;
-  transform:translateX(-50%);
-}
-
-.workflow div:hover::after{
-  width:60%;
-}
-
-/* ================= TESTIMONIAL ================= */
-
-.testimonial{
-text-align:center;
-max-width:700px;
-margin:auto;
-font-style:italic;
-color:#ccc;
-}
-
-/* ================= CTA ================= */
-
-.cta{
-background:#00e5ff;
-color:#000;
-text-align:center;
-border-radius:20px;
-padding:1px 10px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact-icons{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:30px;
-}
-
-.contact-icons a{
-font-size:1.8rem;
-color:#00e5ff;
-transition:0.3s;
-}
-
-.contact-icons a:hover{
-transform:scale(1.2);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-margin-top:50px;
-color:#777;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:768px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.about-grid{
-grid-template-columns:1fr;
-}
-
-.nav-links{
-position:absolute;
-top:70px;
-right:0;
-background:#000;
-flex-direction:column;
-width:200px;
-padding:20px;
-display:none;
-}
-
-.nav-links.active{
-display:flex;
-}
-
-.menu-toggle{
-display:block;
-}
-
-}
-
-html, body{
-  margin:0;
-  padding:0;
-  background:black;
-  overflow-x:hidden;
-}
-
-#galaxy{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  z-index:0;
-}
-
-main, section, header, footer{
-  position:relative;
-  z-index:1;
-}
-
-/* ================= HERO ANIMATION ADD-ON ================= */
-
-/* Fade + Slide saat pertama load */
-.hero-text{
-  animation: fadeSlideUp 1.2s ease forwards;
-  opacity: 0;
-}
-
-.hero-img{
-  animation: 
-    float 4s ease-in-out infinite,
-    fadeSlideRight 1.4s ease forwards;
-  opacity: 0;
-}
-
-/* Delay agar lebih smooth */
-.hero-text h1{
-  animation: fadeSlideUp 1s ease forwards;
-  animation-delay: .3s;
-  opacity: 0;
-}
-
-.hero-text p{
-  animation: fadeSlideUp 1s ease forwards;
-  animation-delay: .6s;
-  opacity: 0;
-}
-
-.btn{
-  animation: fadeSlideUp 1s ease forwards;
-  animation-delay: .9s;
-  opacity: 0;
-}
-
-/* Glow pulse halus di foto */
-.hero-img::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  box-shadow:0 0 60px rgba(0,229,255,0.6);
-  opacity:.6;
-  animation: pulseGlow 3s ease-in-out infinite;
-  z-index:-1;
-}
-
-/* ================= KEYFRAMES ================= */
-
-@keyframes fadeSlideUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes fadeSlideRight{
-  from{
-    opacity:0;
-    transform:translateX(60px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-
-@keyframes pulseGlow{
-  0%,100%{
-    transform:scale(1);
-    opacity:.5;
-  }
-  50%{
-    transform:scale(1.1);
-    opacity:.9;
-  }
-}
-
-#typing-text::after{
-  content:"|";
-  margin-left:5px;
-  animation: blink 1s infinite;
-  color:#00e5ff;
-}
-
-@keyframes blink{
-  0%,100%{opacity:1;}
-  50%{opacity:0;}
-}
-
-</style>
 </head>
 
 
@@ -560,11 +24,12 @@ main, section, header, footer{
 <canvas id="galaxy"></canvas>
 
 <nav>
-<div class="logo">Portfolio</div>
+<div class="logo">My Portfolio</div>
 <ul class="nav-links">
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 <div class="menu-toggle"><i class="fas fa-bars"></i></div>
@@ -574,10 +39,10 @@ main, section, header, footer{
 <div class="hero-text">
 <h1>Hi, I'm <span>Fadzillah Fauzan Aditya</span></h1>
 <p id="typing-text"></p>
-<a href="#contact" class="btn">Hire Me</a>
+<a href="#contact" class="btn">Contact Me</a>
 </div>
 <div class="hero-img">
-<img src="profile.jpg" alt="Fadzillah">
+<img src="assets/img/profile.jpg" alt="Fadzillah">
 </div>
 </section>
 
@@ -604,7 +69,7 @@ main, section, header, footer{
 </div>
 </div>
 <div>
-<img src="img1.jpg" style="width:100%;border-radius:20px;">
+<img src="assets/img/img1.jpg" style="width:100%;border-radius:20px;">
 </div>
 </div>
 </section>
@@ -614,33 +79,67 @@ main, section, header, footer{
 <div class="container">
 
 <div class="skills-category">
-<h3>Tools</h3>
+<h3>Frontend</h3>
 <div class="skill"><span>HTML</span><div class="progress"><div class="progress-bar" data-width="95%"></div></div></div>
 <div class="skill"><span>CSS</span><div class="progress"><div class="progress-bar" data-width="90%"></div></div></div>
 <div class="skill"><span>JavaScript</span><div class="progress"><div class="progress-bar" data-width="85%"></div></div></div>
-<div class="skill"><span>Python</span><div class="progress"><div class="progress-bar" data-width="80%"></div></div></div>
-<div class="skill"><span>Canva</span><div class="progress"><div class="progress-bar" data-width="85%"></div></div></div>
+</div>
+
+<div class="skills-category framework">
+<h3>CSS Framework / UI Framework</h3>
+
+<div class="skill">
+<span>Bootstrap</span>
+<div class="progress">
+<div class="progress-bar framework-bar" data-width="75%"></div>
+</div>
+</div>
+
+<div class="skill">
+<span>Tailwind</span>
+<div class="progress">
+<div class="progress-bar framework-bar" data-width="70%"></div>
+</div>
+</div>
+
+</div>
+
+<div class="skills-category">
+<h3>Backend</h3>
+
+<div class="skill"><span>Python</span><div class="progress"><div class="progress-bar" data-width="65%"></div></div></div>
+</div>
+
+<div class="skills-category">
+<h3>Tools</h3>
+<div class="skill"><span>Git</span><div class="progress"><div class="progress-bar" data-width="72%"></div></div></div>
+<div class="skill"><span>GitHub</span><div class="progress"><div class="progress-bar" data-width="80%"></div></div></div>
+<div class="skill"><span>Power BI</span><div class="progress"><div class="progress-bar" data-width="60%"></div></div></div>
+<div class="skill"><span>Microsoft Office</span><div class="progress"><div class="progress-bar" data-width="70%"></div></div></div>
+<div class="skill"><span>Canva</span><div class="progress"><div class="progress-bar" data-width="80%"></div></div></div>
 <div class="skill"><span>CapCut</span><div class="progress"><div class="progress-bar" data-width="75%"></div></div></div>
 </div>
 
 <div class="skills-category">
-<h3>Professional Skills</h3>
+<h3>Soft Skills</h3>
 <div class="skill"><span>Problem Solving</span><div class="progress"><div class="progress-bar" data-width="90%"></div></div></div>
 <div class="skill"><span>Critical Thinking</span><div class="progress"><div class="progress-bar" data-width="85%"></div></div></div>
 <div class="skill"><span>Communication</span><div class="progress"><div class="progress-bar" data-width="88%"></div></div></div>
 <div class="skill"><span>Creativity</span><div class="progress"><div class="progress-bar" data-width="92%"></div></div></div>
 <div class="skill"><span>Time Management</span><div class="progress"><div class="progress-bar" data-width="87%"></div></div></div>
+<div class="skill"><span>Prompt Engineering</span><div class="progress"><div class="progress-bar" data-width="80%"></div></div></div>
+
 </div>
 
 </div>
 </section>
 
 <section id="projects">
-<h2>Projects</h2>
+<h2>Last Projects</h2>
 <div class="projects-grid container">
 
 <div class="project-card">
-<img src="img2.jpg">
+<img src="assets/img/img2.jpg">
 <div class="project-content">
 <h4>PT. BARA TEKNIK MANDIRI</h4>
 <p>Company profile website modern & responsive.</p>
@@ -649,7 +148,7 @@ main, section, header, footer{
 </div>
 
 <div class="project-card">
-<img src="img3.jpg">
+<img src="assets/img/img3.jpg">
 <div class="project-content">
 <h4>20+ Digital Wedding Website</h4>
 <p>Interactive wedding invitation websites.</p>
@@ -659,22 +158,93 @@ main, section, header, footer{
 </div>
 </section>
 
-<section>
-<h2>Workflow</h2>
-<div class="workflow container">
-<div>Discussion</div>
-<div>Planning</div>
-<div>Design</div>
-<div>Development</div>
-<div>Launch</div>
-</div>
-</section>
 
-<section>
-<h2>Testimonial</h2>
-<div class="testimonial">
-<p>"Pelayanan cepat dan hasil website sangat profesional!"</p>
+<section id="experience" class="resume">
+
+<div class="container">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item" data-aos="fade-up">
+
+<div class="timeline-content">
+
+<h3 class="timeline-tittle">Surveyor Pengukuran dan Pendataan Jalan</h3>
+
+<span class="year">2019 — 2021</span>
+
+<p class="summary-text">
+Bertanggung jawab dalam kegiatan pengukuran, pendataan kondisi jalan, serta
+penyusunan laporan hasil survei lapangan.
+</p>
 </div>
+</div>
+
+<div class="timeline-item" data-aos="fade-up">
+<div class="timeline-content">
+
+<h3 class="timeline-tittle">Project Coordinator</h3>
+
+<span class="year">2021— 2022</span>
+
+<p class="summary-text">
+Bertanggung jawab mengoordinasikan tim, memantau progres proyek, serta
+memastikan pelaksanaan sesuai jadwal dan target.
+</p>
+</div>
+</div>
+
+
+<div class="timeline-item" data-aos="fade-up">
+<div class="timeline-content">
+
+<h3 class="timeline-tittle">Driver Travel Antar Provinsi</h3>
+
+<span class="year">2022— 2024</span>
+
+<p class="summary-text">
+Mengantarkan penumpang atau barang sampai ke tujuan dengan aman dan selamat.
+</p>
+</div>
+</div>
+
+<div class="timeline-item" data-aos="fade-up">
+<div class="timeline-content">
+
+<h3 class="timeline-tittle">Host Live Streaming & Admin Marketplace</h3>
+
+<span class="year">2024 — 2025</span>
+
+<p class="summary-text">
+Melakukan penjualan produk di live streaming dan membawakan live secara interaktif.
+</p>
+</div>
+</div>
+
+<div class="timeline-item" data-aos="fade-up">
+<div class="timeline-content">
+
+<h3 class="timeline-tittle">Web Developer (Freelance)</h3>
+
+<span class="year">2024 — Saat ini</span>
+
+<p class="summary-text">
+merancang, membangun, menguji, dan memelihara situs web atau aplikasi berbasis web menggunakan bahasa pemrograman agar fungsional, responsif, dan mudah digunakan.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+
+</div>
+
 </section>
 
 <section class="cta">
@@ -692,231 +262,29 @@ main, section, header, footer{
 </div>
 </section>
 
+<section class="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<form action="assets/php/send.php" method="POST" class="contact-form">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
 <footer>
 © 2025 Fadzillah Fauzan Aditya
 </footer>
 
-<script>
-
-/* Mobile Menu */
-document.querySelector(".menu-toggle").onclick=function(){
-document.querySelector(".nav-links").classList.toggle("active");
-};
-
-/* Skill Animation */
-window.addEventListener("scroll",function(){
-document.querySelectorAll(".progress-bar").forEach(bar=>{
-let rect=bar.getBoundingClientRect();
-if(rect.top<window.innerHeight){
-bar.style.width=bar.getAttribute("data-width");
-}
-});
-});
-
-const canvas = document.getElementById("galaxy");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let stars = [];
-let shootingStars = [];
-
-class Star{
-  constructor(){
-    this.x = Math.random()*canvas.width;
-    this.y = Math.random()*canvas.height;
-    this.radius = Math.random()*1.5;
-    this.alpha = Math.random();
-    this.speed = Math.random()*0.2;
-  }
-
-  draw(){
-    ctx.beginPath();
-    ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
-    ctx.fillStyle = "rgba(255,255,255,"+this.alpha+")";
-    ctx.fill();
-  }
-
-  update(){
-    this.y += this.speed;
-    if(this.y > canvas.height){
-      this.y = 0;
-      this.x = Math.random()*canvas.width;
-    }
-  }
-}
-
-class ShootingStar{
-  constructor(){
-    this.reset();
-  }
-
-  reset(){
-    this.x = Math.random()*canvas.width;
-    this.y = 0;
-    this.len = Math.random()*80 + 10;
-    this.speed = Math.random()*6 + 4;
-    this.size = Math.random()*1 + 0.5;
-    this.waitTime = Date.now() + Math.random()*3000 + 2000;
-    this.active = false;
-  }
-
-  update(){
-    if(this.active){
-      this.x += this.speed;
-      this.y += this.speed;
-      if(this.y > canvas.height || this.x > canvas.width){
-        this.reset();
-      }
-    }else{
-      if(Date.now() > this.waitTime){
-        this.active = true;
-      }
-    }
-  }
-
-  draw(){
-    if(this.active){
-      ctx.beginPath();
-      ctx.moveTo(this.x,this.y);
-      ctx.lineTo(this.x-this.len,this.y-this.len);
-      ctx.strokeStyle="white";
-      ctx.lineWidth=this.size;
-      ctx.stroke();
-    }
-  }
-}
-
-function init(){
-  stars = [];
-  shootingStars = [];
-
-  for(let i=0;i<200;i++){
-    stars.push(new Star());
-  }
-
-  for(let i=0;i<3;i++){
-    shootingStars.push(new ShootingStar());
-  }
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  stars.forEach(star=>{
-    star.update();
-    star.draw();
-  });
-
-  shootingStars.forEach(star=>{
-    star.update();
-    star.draw();
-  });
-
-  requestAnimationFrame(animate);
-}
-
-window.addEventListener("resize",()=>{
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  init();
-});
-
-init();
-animate();
-
-/* ================= typingText ================= */
-
-
-const text = "Professional Web Developer";
-const typingElement = document.getElementById("typing-text");
-
-let index = 0;
-
-function typeEffect() {
-  if (index < text.length) {
-    typingElement.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, 50); // kecepatan ketik (lebih kecil = lebih cepat)
-  }
-}
-
-document.addEventListener("DOMContentLoaded", typeEffect);
-
-
-/* ================= WORKFLOW ANIMATION ================= */
-
-const workflowItems = document.querySelectorAll(".workflow div");
-
-function showOnScroll() {
-  const triggerBottom = window.innerHeight * 0.85;
-
-  workflowItems.forEach((item, index) => {
-    const boxTop = item.getBoundingClientRect().top;
-
-    if (boxTop < triggerBottom) {
-      setTimeout(() => {
-        item.classList.add("show");
-      }, index * 200); // delay antar box
-    }
-  });
-}
-
-window.addEventListener("scroll", showOnScroll);
-window.addEventListener("load", showOnScroll);
-
-/* ================= STATS ANIMATION ================= */
-
-const counters = document.querySelectorAll(".counter");
-const statsBoxes = document.querySelectorAll(".stats div");
-
-let started = false;
-
-function runCounter() {
-  const triggerBottom = window.innerHeight * 0.85;
-  const statsSection = document.querySelector(".stats");
-
-  if (!statsSection) return;
-
-  const sectionTop = statsSection.getBoundingClientRect().top;
-
-  if (sectionTop < triggerBottom && !started) {
-    started = true;
-
-    statsBoxes.forEach((box, index) => {
-      setTimeout(() => {
-        box.classList.add("show");
-      }, index * 200);
-    });
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute("data-target");
-      const increment = target / 100;
-
-      let count = 0;
-
-      function updateCounter() {
-        count += increment;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count);
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.innerText = target + "+";
-        }
-      }
-
-      updateCounter();
-    });
-  }
-}
-
-window.addEventListener("scroll", runCounter);
-window.addEventListener("load", runCounter);
-
-
-</script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
