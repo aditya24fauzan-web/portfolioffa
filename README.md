@@ -16,7 +16,10 @@ Website portfolio pribadi yang dibuat menggunakan HTML untuk menampilkan profil,
 
 ## Project Structure
 
-portofolio
+```
+portfolio
+│
+├── index.html
 │
 ├── assets
 │   ├── css
@@ -30,8 +33,8 @@ portofolio
 │   └── php
 │       └── send.php
 │
-└── index.html
-
+└── README.md
+```
 ## Preview
 Website ini digunakan sebagai portfolio pribadi untuk menampilkan kemampuan web development.
 
